@@ -28,6 +28,7 @@ import com.exemple.dizcontre.api.service.PessoaService;
 @RestController
 @RequestMapping("/pessoas")
 //@CrossOrigin(origins= {"*"}, maxAge = 4800, allowCredentials = "false"  ) 
+@CrossOrigin(origins = "http://localhost:4200")
 public class PessoaController {
 
 	@Autowired

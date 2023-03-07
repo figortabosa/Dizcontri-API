@@ -2,6 +2,7 @@ package com.exemple.dizcontre.api.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -29,6 +30,8 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 		/* Ativando a permissão para acesso a pagina inicial do sistemaL*/
 		.disable().authorizeRequests().antMatchers("/").permitAll()
 		.antMatchers("/index").permitAll()
+		
+		.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 		
 		/* URL de logout - Redireciona após o user deslogar */
 		.anyRequest().authenticated().and().logout().logoutSuccessUrl("/index")
