@@ -97,6 +97,7 @@ public class JWTTokenAutenticacaoService {
 
 	private void liberacaoCors(HttpServletResponse response) {
 		
+		
 		if (response.getHeader("Access-Control-Allow-Origin") == null) {
 			response.addHeader("Access-Control-Allow-Origin", "*");
 		}
