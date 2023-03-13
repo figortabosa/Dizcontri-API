@@ -34,7 +34,9 @@ public class DizcontreApiApplication implements WebMvcConfigurer{
 		
 		registry.addMapping("/pessoas/**")
 		.allowedMethods("*")
-		.allowedOrigins("*");
+		.allowedOrigins("*")
+		.allowedHeaders("*")
+		.allowCredentials(false);
 		
 		
 	}

@@ -51,7 +51,7 @@ public class JWTTokenAutenticacaoService {
 		
 		liberacaoCors(response);
 		
-		response.getWriter().write("{\"authorization\": \""+token+"\"}");
+		response.getWriter().write("{\"Authorization\": \""+token+"\"}");
 	}
 	
 	public Authentication getAuthentication(HttpServletRequest request, HttpServletResponse response) {
