@@ -53,6 +53,7 @@ public class PessoaController {
 		if (pessoa.getContato() != null) {
 			pessoa.getContato().setPessoa(pessoa); /* Amarra o objeto filho ao objeto pai */
 		}
+		
 		Pessoa pessoaSalva = pessoaRepository.save(pessoa);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(pessoaSalva);

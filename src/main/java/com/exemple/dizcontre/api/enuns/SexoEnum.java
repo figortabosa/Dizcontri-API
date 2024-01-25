@@ -11,20 +11,20 @@ public enum SexoEnum {
 	FEMININO("Feminino", "F");
 	
 	
-	private String value;
+	private String valor;
 	private String label;
 	
-	private SexoEnum(String label, String value) {
+	private SexoEnum(String name, String label) {
+		this.valor = name;
 		this.label = label;
-		this.value = value;
 	}
 	
 	public void setValue(String value) {
-		this.value = value;
+		this.valor = value;
 	}
 	
 	public String getValue() {
-		return value;
+		return valor;
 	}
 	
 	public String getLabel() {
@@ -35,7 +35,7 @@ public enum SexoEnum {
 	}
 	@Override
 	public String toString() {
-		return this.label;
+		return this.getLabel().toString();
 	}
 	
 	
