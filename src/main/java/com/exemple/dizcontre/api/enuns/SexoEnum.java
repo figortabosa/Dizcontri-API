@@ -38,5 +38,17 @@ public enum SexoEnum {
 		return this.getLabel().toString();
 	}
 	
+	// Método estático para converter a String do DB de volta para o Enum
+		public static SexoEnum fromLabel(String label) {
+			if (label == null || label.isEmpty()) {
+	            return null;
+	        }
+			for (SexoEnum sexo : SexoEnum.values()) {
+				if (sexo.label.equals(label)) {
+					return sexo;
+				}
+			}
+			throw new IllegalArgumentException("Código de Sexo inválido: " + label);
+		}
 	
 }

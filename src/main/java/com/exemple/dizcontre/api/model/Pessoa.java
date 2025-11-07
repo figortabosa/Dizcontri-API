@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,6 +26,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.exemple.dizcontre.api.converter.SexoEnumConverter;
 import com.exemple.dizcontre.api.enuns.SexoEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -63,7 +65,7 @@ public class Pessoa implements Serializable{
 	
 	
 	@Column(name = "sexo")
-	@Enumerated(EnumType.STRING)
+	@Convert(converter = SexoEnumConverter.class)
 	private SexoEnum sexo;
 	
 	
